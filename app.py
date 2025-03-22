@@ -45,6 +45,6 @@ if __name__ == "__main__":
     mode = os.getenv("FLASK_ENV", "development")
     if mode == "production":
         from waitress import serve
-        serve(app, host="0.0.0.0", port=5000)
+        serve(app, host="0.0.0.0", port=8052)
     else:
-        app.run(host="0.0.0.0", port=5000, debug=True)
+        app.run(host="0.0.0.0", port=8052, debug=True)
