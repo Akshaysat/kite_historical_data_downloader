@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, send_file
+from waitress import serve
 import pandas as pd
 import io
 from historical_fetch import scrap_data, kiteLogin  # Your existing logic
@@ -44,7 +45,6 @@ import os
 if __name__ == "__main__":
     mode = os.getenv("FLASK_ENV", "development")
     if mode == "production":
-        from waitress import serve
         serve(app, host="0.0.0.0", port=8052)
     else:
         app.run(host="0.0.0.0", port=8052, debug=True)
