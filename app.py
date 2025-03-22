@@ -45,6 +45,6 @@ import os
 if __name__ == "__main__":
     mode = os.getenv("FLASK_ENV", "development")
     if mode == "production":
-        serve(app, host="0.0.0.0", port=8052)
+        app.run(host="0.0.0.0", port=8052, debug=True)
     else:
         app.run(host="0.0.0.0", port=8052, debug=True)
